@@ -1,7 +1,7 @@
 /**
- * A collection of routes path.
+ * A collection of route paths.
  */
-export const routes = {
+export const routePaths = {
   characters: 'characters',
   notFound: '*',
   root: ''

@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Navigate, Outlet, RouteObject } from 'react-router-dom'
 
 import { SuspenseLoading } from './shared/components/commons'
-import { routes as routestPath } from './shared/constants/routes.constant'
+import { routePaths } from './shared/constants/routes.constant'
 
 const CharactersPage = lazy(() => import('./presentation/pages/characters.page'))
 const NotFoundPage = lazy(() => import('./presentation/pages/not-found.page'))
@@ -15,16 +15,16 @@ export const routes: RouteObject[] = [
   {
     children: [
       {
-        element: <Navigate to={routestPath.characters} />,
+        element: <Navigate to={routePaths.characters} />,
         index: true
       },
       {
         element: <CharactersPage />,
-        path: routestPath.characters
+        path: routePaths.characters
       },
       {
         element: <NotFoundPage />,
-        path: routestPath.notFound
+        path: routePaths.notFound
       }
     ],
     element: (
@@ -32,6 +32,6 @@ export const routes: RouteObject[] = [
         <Outlet />
       </Suspense>
     ),
-    path: routestPath.root
+    path: routePaths.root
   }
 ]
